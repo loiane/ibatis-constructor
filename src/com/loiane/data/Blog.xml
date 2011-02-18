@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Blog">
+	
+	<resultMap id="resultBlog" type="Blog">
+		<constructor>
+			<idArg column="id" javaType="int"/>
+			<arg column="url" javaType="String"/>
+		</constructor>
+	    <result property="name"/>
+    </resultMap>
+    
+	
+    <select id="selectBlog" resultMap="resultBlog">
+    	SELECT idBlog as id, name, url FROM BLOG 
+    </select>
+
+</mapper>
